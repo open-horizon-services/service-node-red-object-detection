@@ -1,4 +1,4 @@
-# Multi-arch docker container instance of the open-source Fledge project intended for Open Horizon Linux edge nodes
+# Multi-arch docker container instance of the open-source Node-RED project intended for Open Horizon Linux edge nodes
 
 export DOCKER_HUB_ID ?= docker.io/walicki
 export HZN_ORG_ID ?= examples

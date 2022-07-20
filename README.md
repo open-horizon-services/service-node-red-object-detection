@@ -1,7 +1,5 @@
 # service-node-red-object-detection
 
-=================================
-
 Open Horizon service container demonstrating Node-RED Object Detection.
 
 This is an Open Horizon configuration to deploy an instance of the open-source [Node-RED](https://nodered.org) project. The Node-RED flow is designed to run in a web browser, so you will need to navigate to http://localhost:1880/ to use the software once it has been deployed.
