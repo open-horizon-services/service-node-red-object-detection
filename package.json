@@ -1,8 +1,17 @@
 {
     "name": "service-node-red-object-detection",
-    "description": "A Node-RED Project",
-    "version": "0.0.1",
-    "dependencies": {},
+    "description": "Open Horizon service container demonstrating Node-RED object detection",
+    "version": "1.0.0",
+    "dependencies": {
+        "node-red": "3.x",
+        "node-red-contrib-browser-utils": "0.0.10",
+        "node-red-contrib-image-tools": "2.0.4",
+        "node-red-contrib-tfjs-coco-ssd": "0.5.7",
+        "node-red-node-annotate-image": "0.1.2"
+    },
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS --userDir /opt/app-root/data"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",

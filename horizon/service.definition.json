@@ -1,0 +1,24 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "Open Horizon service for the open-source Node-RED Editor",
+    "public": true,
+    "documentation": "https://github.com/open-horizon-services/service-node-red-object-detection",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "singleton",
+    "requiredServices": [],
+    "userInput": [],
+    "deployment": {
+        "services": {
+            "$SERVICE_NAME": {
+                "image": "${CONTAINER_IMAGE_BASE}_$ARCH:$CONTAINER_IMAGE_VERSION",
+                "privileged": false,
+                "ports": [
+                    {"HostIP":"0.0.0.0","HostPort":"1880:1880/tcp"}
+                ]
+            }
+        }
+    }
+}

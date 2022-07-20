@@ -1,1 +1,287 @@
-[]
+[
+    {
+        "id": "7cb80942.206158",
+        "type": "tab",
+        "label": "COCO SSD",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "81bd97f1.03d648",
+        "type": "camera",
+        "z": "7cb80942.206158",
+        "name": "",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "5b9fe8bf260cd2ad"
+            ]
+        ]
+    },
+    {
+        "id": "54e010cd.e92ab8",
+        "type": "inject",
+        "z": "7cb80942.206158",
+        "name": "Sample image",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "apple-keyboard-ccby40.jpg",
+        "payloadType": "str",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "a0131eaacf296c3a"
+            ]
+        ]
+    },
+    {
+        "id": "a809ec3.bc10a9",
+        "type": "image viewer",
+        "z": "7cb80942.206158",
+        "name": "",
+        "width": "320",
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 750,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d02fdac5.2ee05",
+        "type": "image viewer",
+        "z": "7cb80942.206158",
+        "name": "",
+        "width": "320",
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 750,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c2dc8a3a8cd67e3",
+        "type": "annotate-image",
+        "z": "7cb80942.206158",
+        "name": "",
+        "fill": "",
+        "stroke": "#ffC000",
+        "lineWidth": 5,
+        "fontSize": 24,
+        "fontColor": "#ffC000",
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "d02fdac5.2ee05"
+            ]
+        ]
+    },
+    {
+        "id": "6677aba19f3bba8c",
+        "type": "tensorflowCoco",
+        "z": "7cb80942.206158",
+        "name": "",
+        "modelUrl": "http://localhost:1880/coco/model.json",
+        "scoreThreshold": 0.5,
+        "passthru": "false",
+        "lineColour": "magenta",
+        "x": 170,
+        "y": 400,
+        "wires": [
+            [
+                "9c8a557fc5a7f3a3",
+                "c8854bb0a96172c4"
+            ]
+        ]
+    },
+    {
+        "id": "9c8a557fc5a7f3a3",
+        "type": "debug",
+        "z": "7cb80942.206158",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5b9fe8bf260cd2ad",
+        "type": "jimp-image",
+        "z": "7cb80942.206158",
+        "name": "Write JPG",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "buf",
+        "parameter1": "picture.jpg",
+        "parameter1Type": "str",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 1,
+        "jimpFunction": "write",
+        "selectedJimpFunction": {
+            "name": "write",
+            "fn": "write",
+            "description": "Write to file. NOTE: You can specify an alternative file extension type to change the type. Currently support types are jpg, png, bmp.",
+            "parameters": [
+                {
+                    "name": "filename",
+                    "type": "str",
+                    "required": true,
+                    "hint": "Name of the file",
+                    "defaultType": "str"
+                }
+            ]
+        },
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "21c01e645a5f14d2"
+            ]
+        ]
+    },
+    {
+        "id": "a0131eaacf296c3a",
+        "type": "jimp-image",
+        "z": "7cb80942.206158",
+        "name": "Load JPG",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "buf",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "a809ec3.bc10a9",
+                "6677aba19f3bba8c"
+            ]
+        ]
+    },
+    {
+        "id": "21c01e645a5f14d2",
+        "type": "change",
+        "z": "7cb80942.206158",
+        "name": "Set picture filename",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "picture.jpg",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 40,
+        "wires": [
+            [
+                "a0131eaacf296c3a"
+            ]
+        ]
+    },
+    {
+        "id": "c8854bb0a96172c4",
+        "type": "function",
+        "z": "7cb80942.206158",
+        "name": "Label Objects",
+        "func": "if (msg.payload.length == 0) {\n    return null;   // No objects detected / empty array \n}\n\nmsg.annotations = [];\nfor (var i = 0; i < msg.payload.length; i++) {\n    msg.payload[i].label = msg.payload[i].class;\n    msg.annotations.push(msg.payload[i]);\n}\nmsg.payload = msg.image;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "0c2dc8a3a8cd67e3",
+                "f23366bed38bef9c"
+            ]
+        ]
+    },
+    {
+        "id": "f23366bed38bef9c",
+        "type": "debug",
+        "z": "7cb80942.206158",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 440,
+        "wires": []
+    }
+]

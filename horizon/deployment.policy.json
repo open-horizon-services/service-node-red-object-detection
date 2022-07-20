@@ -1,0 +1,26 @@
+{
+  "label": "$SERVICE_NAME Deployment Policy",       /* Deployment policy label. */
+  "description": "Policy to auto deploy $SERVICE_NAME", /* Deployment policy description. */
+  "service": {
+    "name": "$SERVICE_NAME",      /* The name of the service. */
+    "org": "$SERVICE_ORG_ID",       /* The org of the service. */
+    "arch": "*",      /* Set to '*' to use services of any hardware architecture. */
+    "serviceVersions": [  /* A list of service versions. */
+      {
+        "version": "$SERVICE_VERSION",
+        "priority":{}
+      }
+    ]
+  },
+  "properties": [   /* A list of policy properties that describe the service being deployed. */
+    {
+       "name": "prop1",
+       "value": "value1"
+      }
+  ],
+  "constraints": [
+    "nodered == objectdetection"
+  ],
+  "userInput": [],
+  "secretBinding": []
+}

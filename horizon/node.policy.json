@@ -1,0 +1,25 @@
+{
+  "properties": [      /* A list of policy properties that describe the object. */
+                       /* It applies to both deployment and node management.*/
+                       /* It usually containts the built-in node properties.*/
+    {
+       "name": "nodered",
+       "value": "objectdetection"
+    }
+  ],
+  "constraints": [],
+  "deployment": {      /* Policies that are used for deployment only. */
+      "properties": [  /* A list of policy properties for deployment. */
+                       /* It overwrites the properties with the same name on the top level.*/
+        {
+           "name": "nodered",
+           "value": "objectdetection"
+        }
+      ],
+      "constraints": []
+  },
+  "management": {      /* Policies that are used for node management only. */
+      "properties": [],
+      "constraints": []
+  }
+}
