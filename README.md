@@ -2,11 +2,11 @@
 
 Open Horizon service container demonstrating Node-RED Object Detection.
 
-This is an Open Horizon configuration to deploy an instance of the open-source [Node-RED](https://nodered.org) project. The Node-RED flow is designed to run in a web browser, so you will need to navigate to http://localhost:1880/ to use the software once it has been deployed.
+This is an Open Horizon configuration to deploy an instance of the open-source [Node-RED](https://nodered.org) project. The Node-RED flow is designed to run in a web browser, so you will need to navigate to <http://localhost:1880/> to use the software once it has been deployed.
 
 The Node-RED flow demonstrates Object Detection using the [node-red-contrib-tfjs-coco-ssd](https://flows.nodered.org/node/node-red-contrib-tfjs-coco-ssd) node.  There is a sample image of an Apple and a Keyboard.  If you have a webcam attached to your computer, you can take pictures of objects and detect objects defined in the [coco-ssd model and dataset](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
 
-The identified objects are annotated with bounding boxes using the [node-red-node-annotate](https://flows.nodered.org/node/node-red-node-annotate-image) node.
+The identified objects are annotated with bounding boxes using the [node-red-node-annotate-image](https://flows.nodered.org/node/node-red-node-annotate-image) node.
 
 ![Node-RED flow with Object Detection](./Node-RED-cocossd-flow.png)
 
@@ -77,9 +77,7 @@ The Makefile includes several targets to assist you in inspecting what is happen
 
 `make log` to see both the event logs and the service logs.
 
-`make check` to see the values in your environment variables and how they compare to the default values.  It will also show the service definition file with those values filled in.
-
-`make deploy-check` to see if the properties and contstraints that you've configured match each other to potentially form an agreement.
+`make deploy-check` to see if the properties and constraints that you've configured match each other to potentially form an agreement.
 
 `make browse` to see if the Node-RED Editor is responding.
 
