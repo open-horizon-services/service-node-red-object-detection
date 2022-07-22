@@ -91,7 +91,6 @@ The Makefile includes several targets to assist you in inspecting what is happen
 * `init` - optionally create the docker volume
 * `run` - manually run the Node-RED container locally as a test
 * `browse` - open the Node-RED UI in a web browser
-* `check` - view current settings
 * `stop` - halt a locally-run container
 * `dev` - manually run Node-RED locally and connect to a terminal in the container
 * `test` - request the Node-RED Editor UI from the terminal to confirm that it is running and available
