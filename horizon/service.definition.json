@@ -16,7 +16,7 @@
                 "image": "${CONTAINER_IMAGE_BASE}_$ARCH:$CONTAINER_IMAGE_VERSION",
                 "privileged": false,
                 "ports": [
-                    {"HostIP":"0.0.0.0","HostPort":"1880:1880/tcp"}
+                    {"HostPort":"1880:1880/tcp"}
                 ]
             }
         }
