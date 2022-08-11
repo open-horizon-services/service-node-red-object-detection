@@ -49,9 +49,9 @@ stop:
 
 run: stop
 	@docker run -d \
-		--name $(SERVICE_NAME) \
-		-p 1880:1880 \
-		$(CONTAINER_IMAGE_BASE)_$(ARCH):$(CONTAINER_IMAGE_VERSION)
+	 --name $(SERVICE_NAME) \
+	 -p 1880:1880 \
+	 $(CONTAINER_IMAGE_BASE)_$(ARCH):$(CONTAINER_IMAGE_VERSION)
 
 attach:
 	@docker exec -it \

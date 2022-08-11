@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9:9.0.0-1576 as build
+FROM registry.access.redhat.com/ubi9:9.0.0-1604 as build
 LABEL stage=builder
 
 RUN dnf install --nodocs -y nodejs nodejs-nodemon npm --setopt=install_weak_deps=0 --disableplugin=subscription-manager \
@@ -21,7 +21,7 @@ COPY ./apple-keyboard-ccby40.jpg /opt/app-root/data/apple-keyboard-ccby40.jpg
 RUN chown -R 1000:1000 .
 
 ## Release image
-FROM registry.access.redhat.com/ubi9/nodejs-16-minimal:1-50
+FROM registry.access.redhat.com/ubi9/nodejs-16-minimal:1-60
 
 USER 0
 RUN microdnf update -y --nodocs --disableplugin=subscription-manager --setopt=install_weak_deps=0 && \
