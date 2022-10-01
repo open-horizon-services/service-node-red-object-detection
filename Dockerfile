@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9:9.0.0-1604 as build
+FROM registry.access.redhat.com/ubi9:9.0.0-1640 as build
 LABEL stage=builder
 
 RUN dnf install --nodocs -y nodejs nodejs-nodemon npm --setopt=install_weak_deps=0 --disableplugin=subscription-manager \
@@ -9,7 +9,7 @@ RUN mkdir -p /opt/app-root/data
 WORKDIR /opt/app-root/data
 COPY ./package.json /opt/app-root/data/package.json
 # Prevent "npm ERR! code ERR_SOCKET_TIMEOUT" by upgrading from npm 8.3 to >= npm 8.5.1
-RUN npm install --no-audit --no-update-notifier --no-fund --omit=dev --omit=optional -g npm@8.14.0
+RUN npm install --no-audit --no-update-notifier --no-fund --omit=dev --omit=optional --location=global npm@8.19.2
 RUN npm install --no-audit --no-update-notifier --no-fund --omit=dev
 
 COPY ./settings.js /opt/app-root/data/
@@ -21,7 +21,7 @@ COPY ./apple-keyboard-ccby40.jpg /opt/app-root/data/apple-keyboard-ccby40.jpg
 RUN chown -R 1000:1000 .
 
 ## Release image
-FROM registry.access.redhat.com/ubi9/nodejs-16-minimal:1-60
+FROM registry.access.redhat.com/ubi9/nodejs-16-minimal:1-67
 
 USER 0
 RUN microdnf update -y --nodocs --disableplugin=subscription-manager --setopt=install_weak_deps=0 && \
