@@ -8,7 +8,7 @@ The Node-RED flow demonstrates Object Detection using the [node-red-contrib-tfjs
 
 The identified objects are annotated with bounding boxes using the [node-red-node-annotate-image](https://flows.nodered.org/node/node-red-node-annotate-image) node.
 
-![Node-RED flow with Object Detection](./Node-RED-cocossd-flow.png)
+![Node-RED flow with Object Detection](./screenshots/Node-RED-cocossd-flow.png)
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ curl -sSL https://github.com/open-horizon/anax/releases/latest/download/agent-in
 
 To manually run this Node-RED container locally as a test, enter `make run`.  This will start the Node-RED container. Enter `make browse` to open a browser to `localhost:1880`.  When you are done, run `make stop` in the terminal to end the test.
 
-To create [the service definition](https://github.com/open-horizon/examples/blob/master/edge/services/helloworld/CreateService.md#build-publish-your-hw), publish it to the hub, and then form an agreement to download and run Node-RED, enter `make publish`.  When installation is complete and an agreement has been formed, exit the watch command with Control-C.  You may then open a browser pointing to Node-RED by entering `make browse` or visiting [http://localhost:1880/](http://localhost:1880/) in a web browser.
+To createi the [service definition](https://github.com/open-horizon/examples/blob/master/edge/services/helloworld/CreateService.md#build-publish-your-hw), publish it to the hub, and then form an agreement to download and run Node-RED, enter `make publish`.  When installation is complete and an agreement has been formed, exit the watch command with Control-C.  You may then open a browser pointing to Node-RED by entering `make browse` or visiting [http://localhost:1880/](http://localhost:1880/) in a web browser.
 
 ## Advanced details
 
@@ -114,7 +114,7 @@ The Makefile includes several targets to assist you in inspecting what is happen
 
 * [John Walicki](https://github.com/johnwalicki)
 
-![Node-RED flow with Object Detection WebCam](./Node-RED-cocossd-flow-webcam.png)
+![Node-RED flow with Object Detection WebCam](./screenshots/Node-RED-cocossd-flow-webcam.png)
 ___
 
 Enjoy!  Give us [feedback](https://github.com/open-horizon-services/service-node-red-object-detection/issues) if you have suggestions on how to improve this tutorial.
