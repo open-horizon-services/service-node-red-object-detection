@@ -1,3 +1,5 @@
+Signed-off-by: Mahi Pasarkar <pasarkarmahi@gmail.com>![Apache](https://img.shields.io/github/license/open-horizon-services/service-node-red-object-detection) ![AMD86](https://img.shields.io/badge/x86-yes-green) ![ARM64](https://img.shields.io/badge/arm64-yes-green) ![Contributors](https://img.shields.io/github/contributors/open-horizon-services/service-node-red-object-detection.svg)
+
 # service-node-red-object-detection
 
 Open Horizon service container demonstrating Node-RED Object Detection.
