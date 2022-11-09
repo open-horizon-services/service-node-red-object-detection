@@ -4,7 +4,7 @@ export DOCKER_HUB_ID ?= docker.io/walicki
 export HZN_ORG_ID ?= examples
 
 export SERVICE_NAME ?= service-node-red-object-detection
-export SERVICE_VERSION ?= 1.0.0
+export SERVICE_VERSION ?= 1.1.0
 export SERVICE_ORG_ID ?= $(HZN_ORG_ID)
 export PATTERN_NAME ?= policy-node-red-object-detection
 
