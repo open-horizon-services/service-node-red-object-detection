@@ -15,7 +15,7 @@ RUN npm install --no-audit --no-update-notifier --no-fund --omit=dev
 COPY ./settings.js /opt/app-root/data/
 COPY ./flow.json /opt/app-root/data/flows.json
 COPY ./flow_cred.json /opt/app-root/data/flows_cred.json
-COPY ./apple-keyboard-ccby40.jpg /opt/app-root/data/apple-keyboard-ccby40.jpg
+COPY ./screenshots/apple-keyboard-ccby40.jpg /opt/app-root/data/apple-keyboard-ccby40.jpg
 
 # Set permissions so that users can use Node-RED "Manage Palette" to add packages
 RUN chown -R 1000:1000 .
